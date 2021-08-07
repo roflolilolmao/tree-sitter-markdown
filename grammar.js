@@ -1,7 +1,11 @@
 module.exports = grammar({
-    name: 'markdown',
+  name: 'markdown',
 
-    rules: {
-        source_file: $ => 'hello'
-    }
+  // Source: https://roopc.net/posts/2014/markdown-cfg/
+
+  rules: {
+    body: $ => repeat($.character),
+
+    character: $ => /./
+  }
 });
